@@ -17,6 +17,13 @@ public class Rotator {
      *   {7}                   →  {7}
      */
     public void rotateLeft(int[] arr) {
+        int var = arr[0];
+
+        for (int i = 0; i < arr.length-1; i++){
+            arr[i] = arr[i + 1];
+
+        }
+        arr[arr.length - 1] = var;
         // TODO: save arr[0] into a temporary variable
 
         // TODO: loop from i = 0 to arr.length - 2
@@ -46,6 +53,13 @@ public class Rotator {
      *   {7}                   →  {7}
      */
     public void rotateRight(int[] arr) {
+        int var = arr[arr.length - 1];
+
+        for (int i = arr.length-1; i >= 1; i--){
+            arr[i] = arr[i - 1];
+
+        }
+        arr[0] = var;
         // TODO: save arr[arr.length - 1] into a temporary variable
 
         // TODO: loop from i = arr.length - 1 DOWN to i = 1

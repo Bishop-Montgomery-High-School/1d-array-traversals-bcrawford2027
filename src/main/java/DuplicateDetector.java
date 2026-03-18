@@ -22,6 +22,14 @@ public class DuplicateDetector {
      * Inner loop:  for (int j = i + 1; j < arr.length; j++)
      */
     public boolean hasDuplicate(int[] arr) {
+        boolean flag = false;
+        for(int i = 0; i < arr.length - 1;i++){
+            for(int j = i + 1; j < arr.length; j++){
+                if(arr[i]== arr[j]){
+                    flag = true;
+                }
+            }
+        }
         // TODO: initialize a boolean flag to false
 
         // TODO: write the outer loop (i from 0 to arr.length - 2)
@@ -31,6 +39,6 @@ public class DuplicateDetector {
         // TODO: if arr[i] == arr[j], set the flag to true
 
         // TODO: return the flag
-        return false; // placeholder
+        return flag; // placeholder
     }
 }

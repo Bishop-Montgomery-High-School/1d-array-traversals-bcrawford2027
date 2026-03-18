@@ -14,13 +14,19 @@ public class Counter {
      *   arr = {1, 2, 3},       threshold = 5  →  returns 0
      */
     public int countAbove(int[] arr, int threshold) {
+        int counter = 0;
         // TODO: initialize a counter to 0
 
         // TODO: loop through arr
+        for(int i : arr){
+            if(i > threshold){
+                counter += 1;
+            }
+        }
         //       if the element is strictly greater than threshold, increment the counter
 
         // TODO: return the counter
-        return 0; // placeholder
+        return counter; // placeholder
     }
 
     /**
@@ -37,12 +43,17 @@ public class Counter {
      */
     public int countBelow(int[] arr, int threshold) {
         // TODO: initialize a counter to 0
-
+        int counter = 0;
         // TODO: loop through arr
+        for(int i : arr){
+            if(i < threshold){
+                counter +=1;
+            }
+        }
         //       if the element is strictly less than threshold, increment the counter
 
         // TODO: return the counter
-        return 0; // placeholder
+        return counter; // placeholder
     }
 
     /**
@@ -59,11 +70,17 @@ public class Counter {
      */
     public int countEqual(int[] arr, int target) {
         // TODO: initialize a counter to 0
-
+        int counter = 0;
         // TODO: loop through arr
-        //       if the element equals target, increment the counter
+        for(int i : arr){
+            if(i == target){
+                counter +=1;
+            }
+        }
+
 
         // TODO: return the counter
-        return 0; // placeholder
+        return counter; // placeholder
+         // placeholder
     }
 }

@@ -17,13 +17,19 @@ public class PropertyChecker {
      *   arr = {7, 8, 9}        →  returns true
      */
     public boolean hasPositive(int[] arr) {
+        boolean flag = false;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i]>0){
+                flag = true;
+            }
+        }
         // TODO: initialize a boolean flag to false
 
         // TODO: loop through arr
         //       if the element is greater than 0, set the flag to true
 
         // TODO: return the flag
-        return false; // placeholder
+        return flag; // placeholder
     }
 
     /**
@@ -43,12 +49,18 @@ public class PropertyChecker {
      *   arr = {0, 2, 4}      →  returns false   (0 is not > 0)
      */
     public boolean allPositive(int[] arr) {
+        boolean flag = true;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i]<=0){
+                flag = false;
+            }
+        }
         // TODO: initialize a boolean flag to true
 
         // TODO: loop through arr
         //       if the element is NOT greater than 0, set the flag to false
 
         // TODO: return the flag
-        return false; // placeholder
+        return flag; // placeholder
     }
 }
