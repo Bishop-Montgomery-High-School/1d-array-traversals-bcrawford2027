@@ -13,17 +13,26 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: MinMax — min()
-      id: minmax-min
+    - name: MinMax — max()
+      id: minmax-max
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: MinMax — min()
+        test-name: MinMax — max()
         setup-command: ''
-        command: "./gradlew test --tests ArrayTraversalsTest.minMax_min_basicCases"
+        command: "./gradlew test --tests ArrayTraversalsTest.minMax_max_basicCases"
+        timeout: 10
+        max-score: 1
+    - name: MinMax — max()
+      id: minmax-max
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: MinMax — max()
+        setup-command: ''
+        command: "./gradlew test --tests ArrayTraversalsTest.minMax_max_basicCases"
         timeout: 10
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        MINMAX-MIN_RESULTS: "${{steps.minmax-min.outputs.result}}"
+        MINMAX-MAX_RESULTS: "${{steps.minmax-max.outputs.result}}"
       with:
-        runners: minmax-min
+        runners: minmax-max,minmax-max
